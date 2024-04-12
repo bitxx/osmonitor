@@ -1,0 +1,7 @@
+.idea
+*.iml
+tmp
+settings.dev.yml
+go.sum
+*.log
+*.tar.gz

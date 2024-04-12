@@ -1,0 +1,24 @@
+app:
+  name: test
+  version: v1.0.0
+  # 监控的服务端交互密钥
+  secret: "123456"
+  # 监控的服务端地址
+  serverUrl: "ws://localhost:3000"
+  # 业务数据发送间隔时间，单位秒
+  DelayTime: 60
+  # 是否开启ping功能，根据需要决定。开启后，每5秒ping一次，3秒收不到反馈则timeout,可以用来做网络延时判断
+  isPing: false
+  # 要监控的进程名称，多个名称使用英文逗号分割：,
+  procNames: geth
+logger:
+  # 日志存放路径
+  path: files/logs
+  # 日志输出，file：文件，default：命令行，其他：命令行
+  stdout: '' #控制台日志，启用后，不输出到文件
+  # 日志等级, trace, debug, info, warn, error, fatal
+  level: trace
+  # 支持default、zap、logrus
+  type: default
+  # 单文件条数
+  cap: 100
