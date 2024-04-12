@@ -137,7 +137,7 @@ func (n *NodeRelay) loop(c *connutil.ConnWrapper) {
 				return
 			}
 			n.channel.LoginIDs[c.RemoteAddr().String()] = authMsg.ID
-			n.logger.Infof("currently there are %d connected nodes", len(n.channel.LoginIDs))
+			n.logger.Infof("node %s login, now %d nodes connected", authMsg.ID, len(n.channel.LoginIDs))
 		case messagePing:
 			// When the node emit a ping message, we need to respond with pong
 			// before five seconds to authorize that node to sent reports
